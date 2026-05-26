@@ -1,0 +1,179 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800;900&family=Epilogue:wght@300;400;500;600;700&display=swap");
+
+/*
+ * Emerald Prestige — premium career intelligence design system.
+ * Deep emerald + gold accents, Urbanist (architectural display) + Epilogue (body).
+ */
+
+@theme inline {
+  --font-display: "Urbanist", system-ui, sans-serif;
+  --font-sans: "Epilogue", system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Emerald Prestige — deep emerald base with warm cream + gold accents */
+  --background: oklch(0.985 0.012 95);             /* warm cream #f5f0e0-ish */
+  --foreground: oklch(0.22 0.045 165);             /* deep emerald ink */
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.045 165);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.045 165);
+
+  --primary: oklch(0.32 0.07 165);                 /* deep emerald */
+  --primary-foreground: oklch(0.985 0.012 95);
+
+  --secondary: oklch(0.94 0.015 100);
+  --secondary-foreground: oklch(0.28 0.06 165);
+
+  --muted: oklch(0.94 0.012 95);
+  --muted-foreground: oklch(0.48 0.025 160);
+
+  --accent: oklch(0.45 0.085 165);                 /* mid emerald */
+  --accent-foreground: oklch(0.985 0.012 95);
+
+  --gold: oklch(0.78 0.13 85);                     /* prestige gold */
+  --gold-foreground: oklch(0.22 0.045 165);
+
+  --destructive: oklch(0.55 0.2 27);
+  --destructive-foreground: oklch(0.985 0 0);
+
+  --border: oklch(0.9 0.018 100);
+  --input: oklch(0.9 0.018 100);
+  --ring: oklch(0.45 0.085 165);
+
+  --chart-1: oklch(0.32 0.07 165);
+  --chart-2: oklch(0.45 0.085 165);
+  --chart-3: oklch(0.78 0.13 85);
+  --chart-4: oklch(0.6 0.04 160);
+  --chart-5: oklch(0.35 0.05 200);
+
+  --sidebar: oklch(0.22 0.045 165);
+  --sidebar-foreground: oklch(0.95 0.012 95);
+  --sidebar-primary: oklch(0.78 0.13 85);
+  --sidebar-primary-foreground: oklch(0.22 0.045 165);
+  --sidebar-accent: oklch(0.3 0.06 165);
+  --sidebar-accent-foreground: oklch(0.95 0.012 95);
+  --sidebar-border: oklch(0.3 0.06 165);
+  --sidebar-ring: oklch(0.78 0.13 85);
+
+  --gradient-emerald: linear-gradient(135deg, oklch(0.22 0.045 165), oklch(0.42 0.085 165));
+  --gradient-gold: linear-gradient(135deg, oklch(0.82 0.13 85), oklch(0.7 0.13 75));
+  --shadow-prestige: 0 20px 60px -20px oklch(0.22 0.045 165 / 0.35);
+  --shadow-soft: 0 2px 12px -2px oklch(0.22 0.045 165 / 0.1);
+}
+
+.dark {
+  --background: oklch(0.18 0.035 165);
+  --foreground: oklch(0.95 0.012 95);
+  --card: oklch(0.22 0.045 165);
+  --card-foreground: oklch(0.95 0.012 95);
+  --popover: oklch(0.22 0.045 165);
+  --popover-foreground: oklch(0.95 0.012 95);
+  --primary: oklch(0.78 0.13 85);
+  --primary-foreground: oklch(0.22 0.045 165);
+  --secondary: oklch(0.28 0.05 165);
+  --secondary-foreground: oklch(0.95 0.012 95);
+  --muted: oklch(0.28 0.05 165);
+  --muted-foreground: oklch(0.7 0.025 160);
+  --accent: oklch(0.5 0.1 165);
+  --accent-foreground: oklch(0.95 0.012 95);
+  --gold: oklch(0.78 0.13 85);
+  --gold-foreground: oklch(0.22 0.045 165);
+  --destructive: oklch(0.6 0.2 27);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.78 0.13 85);
+  --chart-1: oklch(0.78 0.13 85);
+  --chart-2: oklch(0.5 0.1 165);
+  --chart-3: oklch(0.95 0.012 95);
+  --chart-4: oklch(0.6 0.04 160);
+  --chart-5: oklch(0.45 0.085 200);
+  --sidebar: oklch(0.16 0.035 165);
+  --sidebar-foreground: oklch(0.95 0.012 95);
+  --sidebar-primary: oklch(0.78 0.13 85);
+  --sidebar-primary-foreground: oklch(0.22 0.045 165);
+  --sidebar-accent: oklch(0.28 0.05 165);
+  --sidebar-accent-foreground: oklch(0.95 0.012 95);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.78 0.13 85);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv01";
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+}
+
+@utility text-gold { color: var(--gold); }
+@utility bg-gold { background-color: var(--gold); }
+@utility font-display { font-family: var(--font-display); }
+@utility bg-gradient-emerald { background-image: var(--gradient-emerald); }
+@utility bg-gradient-gold { background-image: var(--gradient-gold); }
+@utility shadow-prestige { box-shadow: var(--shadow-prestige); }
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
